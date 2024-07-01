@@ -24,6 +24,7 @@ Name = "Mark"
 Moves = Array[Resource("res://Scripts/DataStructures/CrabMove.gd")]([ExtResource("5_5uqmp"), ExtResource("5_5uqmp"), ExtResource("5_5uqmp")])
 
 [node name="EnemyCircle" parent="BattleManager" groups=["EnemyCircle"] instance=ExtResource("3_ogekb")]
+self_modulate = Color(1, 0, 0.105882, 1)
 position = Vector2(1589, 355)
 
 [node name="Crab" parent="BattleManager/EnemyCircle" instance=ExtResource("1_v801o")]

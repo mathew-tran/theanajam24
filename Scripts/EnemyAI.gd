@@ -12,6 +12,10 @@ func OnStartEnemyTurn():
 	if enemy.Health.IsAlive() == false:
 		EventManager.EnemyTelegraphAbility.emit(null)
 		return
+	var player = Helper.GetActivePlayer()
+	if player.Health.IsAlive() == false:
+		EventManager.EnemyTelegraphAbility.emit(null)
+		return
 	NextMoveToUse = enemy.GetRandomMove()
 	EventManager.EnemyTelegraphAbility.emit(NextMoveToUse)
 

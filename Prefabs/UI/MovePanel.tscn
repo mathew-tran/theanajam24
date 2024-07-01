@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://wrgab0n5yd4r"]
+[gd_scene load_steps=4 format=3 uid="uid://wrgab0n5yd4r"]
 
 [ext_resource type="Script" path="res://Scripts/UI/MovePanel.gd" id="1_mqnwj"]
 [ext_resource type="PackedScene" uid="uid://bluk8vi2v3rr7" path="res://Prefabs/UI/MoveButton.tscn" id="1_s354m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cf744"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="MovePanel" type="Panel"]
 custom_minimum_size = Vector2(1920, 400)
@@ -15,6 +18,7 @@ offset_top = -400.0
 offset_right = 960.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cf744")
 script = ExtResource("1_mqnwj")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
