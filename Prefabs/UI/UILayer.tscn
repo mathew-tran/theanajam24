@@ -23,4 +23,4 @@ offset_top = 78.0
 offset_right = -10.0
 offset_bottom = 138.0
 grow_horizontal = 0
-bShowEXPBar = false
+bIsEnemy = true

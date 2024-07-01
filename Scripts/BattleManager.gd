@@ -5,3 +5,4 @@ extends Node
 
 func _ready():
 	EventManager.PopulatePlayerData.emit(PlayerCircle.get_child(0))
+	EventManager.PopulateEnemyData.emit(EnemyCircle.get_child(0))
