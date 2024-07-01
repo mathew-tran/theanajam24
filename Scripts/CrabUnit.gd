@@ -12,3 +12,5 @@ func _ready():
 	Health = $HealthComponent
 	Health.Setup()
 
+func GetRandomMove():
+	return Moves[randi() % len(Moves)]

@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7t45fgwlvehq"]
+
+[ext_resource type="Script" path="res://Scripts/UI/EnemyTelegraph.gd" id="1_g6ifo"]
+
+[node name="Panel" type="Panel"]
+offset_right = 192.0
+offset_bottom = 58.0
+script = ExtResource("1_g6ifo")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 177.0
+offset_bottom = 50.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Preparing..."
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Pinch"
+horizontal_alignment = 1
+vertical_alignment = 1

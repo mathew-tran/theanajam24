@@ -17,7 +17,7 @@ func FlyAwayAnim():
 func OnInjectBattleLog(message: String):
 	$Label.text = message
 	var tween = get_tree().create_tween()
-	tween.tween_property(self, "position:x", TargetXPosition, .5)
+	tween.tween_property(self, "position:x", TargetXPosition, .2)
 	bIsActive = true
 
 func _input(event):

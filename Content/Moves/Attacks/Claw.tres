@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://csk58dlpc78v8"]
+
+[ext_resource type="Script" path="res://Scripts/DataStructures/CrabMoveAttack.gd" id="1_aeuqw"]
+
+[resource]
+script = ExtResource("1_aeuqw")
+Damage = 3
+DamageBonus = 0
+CritChance = 99
+TargetType = 1
+MoveName = "Claw"
+Cost = 1
+Accuracy = 100
