@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bfirwcnlcdd2l"]
+[gd_scene load_steps=5 format=3 uid="uid://bfirwcnlcdd2l"]
 
 [ext_resource type="Script" path="res://Scripts/UI/UILayer.gd" id="1_gwlpl"]
 [ext_resource type="PackedScene" uid="uid://wrgab0n5yd4r" path="res://Prefabs/UI/MovePanel.tscn" id="1_k0on1"]
 [ext_resource type="PackedScene" uid="uid://dnmp2ytlrmlbd" path="res://Prefabs/UI/HealthBar.tscn" id="2_ld5rn"]
+[ext_resource type="PackedScene" uid="uid://5jgj246x60wl" path="res://Prefabs/UI/BattleLog.tscn" id="4_xvqgu"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_gwlpl")
@@ -24,3 +25,5 @@ offset_right = -10.0
 offset_bottom = 138.0
 grow_horizontal = 0
 bIsEnemy = true
+
+[node name="BattleLog" parent="." instance=ExtResource("4_xvqgu")]

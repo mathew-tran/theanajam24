@@ -4,6 +4,8 @@ var Moves = []
 
 func _ready():
 	EventManager.PopulatePlayerData.connect(OnPopulatePlayerData)
+	EventManager.InjectBattleLog.connect(OnInjectBattleLog)
+	EventManager.BattleLogComplete.connect(OnBattleLogComplete)
 	for child in $VBoxContainer/HBoxContainer.get_children():
 		Moves.append(child)
 	for child in $VBoxContainer/HBoxContainer2.get_children():
@@ -15,3 +17,11 @@ func OnPopulatePlayerData(crab : CrabUnit):
 			Moves[x].Setup(crab.Moves[x], crab)
 		else:
 			Moves[x].Setup(null, null)
+
+func OnInjectBattleLog(_message: String):
+	for move in Moves:
+		move.SetDisable()
+
+func OnBattleLogComplete():
+	for move in Moves:
+		move.SetEnable()

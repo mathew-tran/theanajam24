@@ -19,7 +19,7 @@ func OnButtonPressed():
 		var target = CrabMoveRef.DetermineTarget(CrabUnitRef)
 		CrabMoveRef.PerformMove(target)
 	else:
-		print("MISSED!")
+		EventManager.InjectBattleLog.emit(CrabUnitRef.Name + "'s move has missed!")
 
 func Setup(move : CrabMove, crab : CrabUnit):
 	ButtonRef.disabled = true
@@ -32,3 +32,12 @@ func Setup(move : CrabMove, crab : CrabUnit):
 		CrabMoveRef = move
 		CrabUnitRef = crab
 
+func SetDisable():
+	ButtonRef.disabled = true
+	MoveName.modulate = Color.DIM_GRAY
+
+func SetEnable():
+	if is_instance_valid(CrabMoveRef) == false:
+		return
+	ButtonRef.disabled = false
+	MoveName.modulate = Color.WHITE
