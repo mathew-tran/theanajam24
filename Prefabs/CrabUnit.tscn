@@ -13,4 +13,4 @@ Moves = Array[Resource("res://Scripts/DataStructures/CrabMove.gd")]([ExtResource
 
 [node name="HealthComponent" type="Node" parent="."]
 script = ExtResource("4_1bcxo")
-Amount = 20
+Amount = 25
