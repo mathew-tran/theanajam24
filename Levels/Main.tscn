@@ -24,8 +24,7 @@ Moves = Array[Resource("res://Scripts/DataStructures/CrabMove.gd")]([ExtResource
 [node name="EnemyCircle" parent="BattleManager" groups=["EnemyCircle"] instance=ExtResource("3_ogekb")]
 position = Vector2(1589, 355)
 
-[node name="Crab" parent="BattleManager/EnemyCircle" node_paths=PackedStringArray("Health") instance=ExtResource("1_v801o")]
+[node name="Crab" parent="BattleManager/EnemyCircle" instance=ExtResource("1_v801o")]
 position = Vector2(8, -1)
 scale = Vector2(-1, -1)
 Name = "Atticus"
-Health = NodePath("../../PlayerCircle/Crab/HealthComponent")

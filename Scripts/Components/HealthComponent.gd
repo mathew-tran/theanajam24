@@ -17,9 +17,17 @@ func IsAlive():
 	return Amount > 0
 
 func TakeDamage(amount):
+	if IsAlive() == false:
+		return
+
 	Amount -= amount
+	if Amount > 0:
+		OnTakeDamage.emit(self)
+	else:
+		OnDeath.emit(self)
 
 func Heal(amount):
 	Amount += amount
 	if Amount < 0:
 		Amount = 0
+	OnHeal.emit()

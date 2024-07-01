@@ -5,5 +5,7 @@
 [resource]
 script = ExtResource("1_d0ymv")
 Damage = 2
+TargetType = 1
 MoveName = "Pinch"
 Cost = 1
+Accuracy = 50

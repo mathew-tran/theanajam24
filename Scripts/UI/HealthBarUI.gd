@@ -25,8 +25,10 @@ func Setup(crab: CrabUnit):
 	crab.Health.OnDeath.connect(OnDeath)
 	crab.Health.OnHeal.connect(OnHeal)
 	crab.Health.OnTakeDamage.connect(OnTakeDamage)
-	Update(crab.Health)
+
 	LastCrab = crab
+	print("Setup UI for " + crab.Name + "for " + str(get_path()))
+	Update(crab.Health)
 
 func DisconnectPreviousCrab():
 	if LastCrab != null:
@@ -48,6 +50,11 @@ func OnDeath(healthComponent):
 
 
 func Update(healthComponent : HealthComponent):
-	HealthLabel.text = str(healthComponent.Amount) + "/" + str(healthComponent.MaxHealth)
-	max_value = healthComponent.MaxHealth
-	value = healthComponent.Amount
+	if is_instance_valid(LastCrab):
+		if LastCrab.Health.IsAlive():
+			HealthLabel.text = str(healthComponent.Amount) + "/" + str(healthComponent.MaxHealth)
+		else:
+			HealthLabel.text = "DEAD"
+		max_value = healthComponent.MaxHealth
+		value = healthComponent.Amount
+		print(LastCrab.Name + " update")

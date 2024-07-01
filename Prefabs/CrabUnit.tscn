@@ -5,12 +5,11 @@
 [ext_resource type="Resource" uid="uid://23lkrnyikk4i" path="res://Content/Moves/Attacks/Pinch.tres" id="3_bjh53"]
 [ext_resource type="Script" path="res://Scripts/Components/HealthComponent.gd" id="4_1bcxo"]
 
-[node name="Crab" type="Sprite2D" node_paths=PackedStringArray("Health")]
+[node name="Crab" type="Sprite2D"]
 position = Vector2(163, 233)
 texture = ExtResource("1_hbe70")
 script = ExtResource("2_pfayh")
 Moves = Array[Resource("res://Scripts/DataStructures/CrabMove.gd")]([ExtResource("3_bjh53"), ExtResource("3_bjh53"), ExtResource("3_bjh53"), ExtResource("3_bjh53")])
-Health = NodePath("HealthComponent")
 
 [node name="HealthComponent" type="Node" parent="."]
 script = ExtResource("4_1bcxo")
