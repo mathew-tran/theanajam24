@@ -6,6 +6,10 @@ class_name HealthComponent
 
 var MaxHealth = 0
 
+signal OnHeal(healthComponent)
+signal OnTakeDamage(healthComponent)
+signal OnDeath(healthComponent)
+
 func Setup():
 	MaxHealth = Amount
 

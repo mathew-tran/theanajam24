@@ -26,7 +26,7 @@ value = 10.0
 show_percentage = false
 script = ExtResource("1_fagoq")
 
-[node name="Label" type="Label" parent="."]
+[node name="Health" type="Label" parent="."]
 custom_minimum_size = Vector2(300, 60)
 layout_mode = 1
 anchors_preset = 8
@@ -45,7 +45,7 @@ text = "20/100"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="."]
+[node name="Name" type="Label" parent="."]
 custom_minimum_size = Vector2(300, 60)
 layout_mode = 1
 anchors_preset = 8
@@ -62,6 +62,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 50
 text = "GEORGE"
 vertical_alignment = 1
+uppercase = true
 
 [node name="EXPBar" type="ProgressBar" parent="."]
 custom_minimum_size = Vector2(600, 0)

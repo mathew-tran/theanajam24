@@ -4,4 +4,4 @@ extends Node
 @onready var EnemyCircle = $EnemyCircle
 
 func _ready():
-	EventManager.PopulateMovePanel.emit(PlayerCircle.get_child(0))
+	EventManager.PopulatePlayerData.emit(PlayerCircle.get_child(0))

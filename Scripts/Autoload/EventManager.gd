@@ -1,3 +1,3 @@
 extends Node
 
-signal PopulateMovePanel(crab : CrabUnit)
+signal PopulatePlayerData(crab : CrabUnit)
