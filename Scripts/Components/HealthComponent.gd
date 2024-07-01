@@ -1,4 +1,6 @@
-extends Node2D
+extends Node
+
+class_name HealthComponent
 
 @export var Amount : int
 

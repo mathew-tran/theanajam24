@@ -1,7 +1,10 @@
-[gd_scene format=3 uid="uid://bluk8vi2v3rr7"]
+[gd_scene load_steps=2 format=3 uid="uid://bluk8vi2v3rr7"]
+
+[ext_resource type="Script" path="res://Scripts/UI/MoveButton.gd" id="1_ju87y"]
 
 [node name="MoveButton" type="Panel"]
 custom_minimum_size = Vector2(900, 180)
+script = ExtResource("1_ju87y")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1

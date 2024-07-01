@@ -1,10 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://es6nd57a2gp0"]
+[gd_scene load_steps=6 format=3 uid="uid://es6nd57a2gp0"]
 
 [ext_resource type="PackedScene" uid="uid://c4lv4viiojafv" path="res://Prefabs/CrabUnit.tscn" id="1_v801o"]
 [ext_resource type="PackedScene" uid="uid://bfirwcnlcdd2l" path="res://Prefabs/UI/UILayer.tscn" id="2_jdlnc"]
+[ext_resource type="Script" path="res://Scripts/BattleManager.gd" id="2_tgoci"]
+[ext_resource type="PackedScene" uid="uid://b0mgypkrapx7d" path="res://Prefabs/UI/UnitCircle.tscn" id="3_ogekb"]
+[ext_resource type="Resource" uid="uid://23lkrnyikk4i" path="res://Content/Moves/Attacks/Pinch.tres" id="5_5uqmp"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Crab" parent="." instance=ExtResource("1_v801o")]
-
 [node name="CanvasLayer" parent="." instance=ExtResource("2_jdlnc")]
+
+[node name="BattleManager" type="Node" parent="."]
+script = ExtResource("2_tgoci")
+
+[node name="PlayerCircle" parent="BattleManager" instance=ExtResource("3_ogekb")]
+position = Vector2(323, 355)
+
+[node name="Crab" parent="BattleManager/PlayerCircle" instance=ExtResource("1_v801o")]
+position = Vector2(8, -1)
+Moves = Array[Resource("res://Scripts/DataStructures/CrabMove.gd")]([ExtResource("5_5uqmp"), ExtResource("5_5uqmp"), ExtResource("5_5uqmp")])
+
+[node name="EnemyCircle" parent="BattleManager" instance=ExtResource("3_ogekb")]
+position = Vector2(1589, 355)
+
+[node name="Crab" parent="BattleManager/EnemyCircle" node_paths=PackedStringArray("Health") instance=ExtResource("1_v801o")]
+position = Vector2(8, -1)
+scale = Vector2(-1, -1)
+Health = NodePath("../../PlayerCircle/Crab/HealthComponent")
