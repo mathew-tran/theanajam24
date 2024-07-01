@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://es6nd57a2gp0"]
+
+[ext_resource type="PackedScene" uid="uid://c4lv4viiojafv" path="res://Prefabs/CrabUnit.tscn" id="1_v801o"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Crab" parent="." instance=ExtResource("1_v801o")]

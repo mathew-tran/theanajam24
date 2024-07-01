@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://23lkrnyikk4i"]
+
+[ext_resource type="Script" path="res://Scripts/DataStructures/CrabMoveAttack.gd" id="1_d0ymv"]
+
+[resource]
+script = ExtResource("1_d0ymv")
+Damage = 2
+MoveName = "Pinch"
+Cost = 1
