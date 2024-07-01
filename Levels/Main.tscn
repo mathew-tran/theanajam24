@@ -1,7 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://es6nd57a2gp0"]
+[gd_scene load_steps=3 format=3 uid="uid://es6nd57a2gp0"]
 
 [ext_resource type="PackedScene" uid="uid://c4lv4viiojafv" path="res://Prefabs/CrabUnit.tscn" id="1_v801o"]
+[ext_resource type="PackedScene" uid="uid://bfirwcnlcdd2l" path="res://Prefabs/UI/UILayer.tscn" id="2_jdlnc"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Crab" parent="." instance=ExtResource("1_v801o")]
+
+[node name="CanvasLayer" parent="." instance=ExtResource("2_jdlnc")]

@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://wrgab0n5yd4r"]
+
+[ext_resource type="PackedScene" uid="uid://bluk8vi2v3rr7" path="res://Prefabs/UI/MoveButton.tscn" id="1_s354m"]
+
+[node name="MovePanel" type="Panel"]
+custom_minimum_size = Vector2(1920, 400)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_top = -400.0
+offset_right = 960.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -902.0
+offset_top = -182.0
+offset_right = 902.0
+offset_bottom = 182.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MoveButton" parent="VBoxContainer/HBoxContainer" instance=ExtResource("1_s354m")]
+layout_mode = 2
+
+[node name="MoveButton2" parent="VBoxContainer/HBoxContainer" instance=ExtResource("1_s354m")]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MoveButton" parent="VBoxContainer/HBoxContainer2" instance=ExtResource("1_s354m")]
+layout_mode = 2
+
+[node name="MoveButton2" parent="VBoxContainer/HBoxContainer2" instance=ExtResource("1_s354m")]
+layout_mode = 2
