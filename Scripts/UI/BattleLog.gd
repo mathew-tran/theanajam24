@@ -3,6 +3,8 @@ extends Panel
 
 var TargetXPosition = 0
 var bIsActive = false
+
+var Messages = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	EventManager.InjectBattleLog.connect(OnInjectBattleLog)
@@ -15,6 +17,9 @@ func FlyAwayAnim():
 	return tween
 
 func OnInjectBattleLog(message: String):
+	if bIsActive:
+		Messages.append(message)
+		return
 	$Label.text = message
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "position:x", TargetXPosition, .2)
@@ -25,7 +30,14 @@ func _input(event):
 		if bIsActive:
 			var tween = FlyAwayAnim()
 			tween.tween_callback(OnFlyAwayComplete)
-			bIsActive = false
+
 
 func OnFlyAwayComplete():
+	if len(Messages) > 0:
+		$Label.text = Messages.pop_back()
+		var tween = get_tree().create_tween()
+		tween.tween_property(self, "position:x", TargetXPosition, .2)
+		return
 	EventManager.BattleLogComplete.emit()
+	bIsActive = false
+

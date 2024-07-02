@@ -10,4 +10,4 @@ CritChance = 99
 TargetType = 1
 MoveName = "Claw"
 Cost = 1
-Accuracy = 100
+Accuracy = 10

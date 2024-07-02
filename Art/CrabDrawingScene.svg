@@ -25,8 +25,8 @@
      inkscape:document-units="mm"
      showgrid="true"
      inkscape:zoom="0.71891835"
-     inkscape:cx="283.75962"
-     inkscape:cy="214.90619"
+     inkscape:cx="180.82721"
+     inkscape:cy="238.55282"
      inkscape:window-width="1920"
      inkscape:window-height="1010"
      inkscape:window-x="1698"
@@ -191,6 +191,9 @@
        id="path1"
        cx="96.417564"
        cy="31.852791"
-       r="24.738249" />
+       r="24.738249"
+       inkscape:export-filename="UnitCircle.svg"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
   </g>
 </svg>
