@@ -9,8 +9,10 @@ func PerformMove(target : CrabUnit):
 	var damage = Damage + randi() % (DamageBonus + 1)
 	var result = randi() % 100
 	if result < CritChance:
+
 		damage *= 1.5
-		damage = floor(damage)
+		damage = ceil(damage)
 		print("CRIT")
+		EventManager.InjectBattleLog.emit("CRITICAL HIT!!!")
 	target.Health.TakeDamage(damage)
 	EventManager.InjectBattleLog.emit(target.Name + " took " + str(damage) + " damage!")
