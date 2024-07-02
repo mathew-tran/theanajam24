@@ -5,6 +5,7 @@ var TargetXPosition = 0
 var bIsActive = false
 
 var Messages = []
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	EventManager.InjectBattleLog.connect(OnInjectBattleLog)

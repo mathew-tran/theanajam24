@@ -17,12 +17,17 @@ func OnStartEnemyTurn():
 		EventManager.EnemyTelegraphAbility.emit(null)
 		return
 	NextMoveToUse = enemy.GetRandomMove()
+
 	EventManager.EnemyTelegraphAbility.emit(NextMoveToUse)
 
 func OnCompleteEnemyTurn():
 	var enemy = Helper.GetActiveEnemy()
 	if enemy.Health.IsAlive():
+		await enemy.AnimMove()
 		Helper.DoMove(enemy, NextMoveToUse)
+		await EventManager.BattleLogComplete
 		NextMoveToUse = null
 	else:
 		EventManager.EnemyTelegraphAbility.emit(null)
+
+	EventManager.StartEnemyTurn.emit()

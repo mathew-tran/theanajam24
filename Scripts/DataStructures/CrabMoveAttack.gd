@@ -13,3 +13,4 @@ func PerformMove(target : CrabUnit):
 		damage = floor(damage)
 		print("CRIT")
 	target.Health.TakeDamage(damage)
+	EventManager.InjectBattleLog.emit(target.Name + " took " + str(damage) + " damage!")

@@ -6,6 +6,8 @@ func _ready():
 	EventManager.PopulatePlayerData.connect(OnPopulatePlayerData)
 	EventManager.InjectBattleLog.connect(OnInjectBattleLog)
 	EventManager.BattleLogComplete.connect(OnBattleLogComplete)
+	EventManager.PlayerStartAttack.connect(OnPlayerStartAttack)
+	EventManager.EnemyTelegraphAbility.connect(OnEnemyTelegraphAbility)
 	for child in $VBoxContainer/HBoxContainer.get_children():
 		Moves.append(child)
 	for child in $VBoxContainer/HBoxContainer2.get_children():
@@ -25,3 +27,9 @@ func OnInjectBattleLog(_message: String):
 func OnBattleLogComplete():
 	for move in Moves:
 		move.SetEnable()
+
+func OnPlayerStartAttack():
+	visible = false
+
+func OnEnemyTelegraphAbility(_abil : CrabMove):
+	visible = true

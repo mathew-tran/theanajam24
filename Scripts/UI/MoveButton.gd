@@ -17,11 +17,14 @@ func OnButtonPressed():
 	if is_instance_valid(CrabMoveRef) == false:
 		return
 
+	EventManager.PlayerStartAttack.emit()
+	await CrabUnitRef.AnimMove()
 	Helper.DoMove(CrabUnitRef, CrabMoveRef)
 
+	await EventManager.BattleLogComplete
+
 	EventManager.CompleteEnemyTurn.emit()
-	await get_tree().create_timer(.2).timeout
-	EventManager.StartEnemyTurn.emit()
+
 
 
 func Setup(move : CrabMove, crab : CrabUnit):
