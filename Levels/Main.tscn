@@ -21,7 +21,7 @@ position = Vector2(323, 355)
 [node name="Crab" parent="BattleManager/PlayerCircle" instance=ExtResource("1_v801o")]
 position = Vector2(8, -1)
 Name = "Mark"
-Moves = Array[Resource("res://Scripts/DataStructures/CrabMove.gd")]([ExtResource("5_5uqmp"), ExtResource("5_5uqmp"), ExtResource("5_5uqmp")])
+Moves = Array[Resource("res://Scripts/DataStructures/CrabMove.gd")]([ExtResource("5_5uqmp"), ExtResource("5_5uqmp"), ExtResource("6_4ip8s")])
 
 [node name="EnemyCircle" parent="BattleManager" groups=["EnemyCircle"] instance=ExtResource("3_ogekb")]
 self_modulate = Color(1, 0, 0.105882, 1)

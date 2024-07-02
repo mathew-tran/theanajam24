@@ -13,7 +13,7 @@ func _ready():
 
 func FlyAwayAnim():
 	var tween = get_tree().create_tween()
-	tween.tween_property(self, "position:x", 20000, .5)
+	tween.tween_property(self, "position:x", 20000, .2)
 	return tween
 
 func OnInjectBattleLog(message: String):

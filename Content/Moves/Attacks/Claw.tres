@@ -9,5 +9,5 @@ DamageBonus = 0
 CritChance = 99
 TargetType = 1
 MoveName = "Claw"
-Cost = 1
-Accuracy = 10
+MoveDescription = "Has a high chance of a critical hit"
+Accuracy = 80

@@ -3,6 +3,7 @@ extends Panel
 class_name MoveButton
 
 @onready var MoveName = $Label
+@onready var MoveDescription = $Description
 @onready var ButtonRef = $Button
 
 var CrabMoveRef : CrabMove
@@ -24,11 +25,16 @@ func OnButtonPressed():
 func Setup(move : CrabMove, crab : CrabUnit):
 	ButtonRef.disabled = true
 	MoveName.text = "-"
+	MoveDescription.text = ""
 	CrabMoveRef = null
 	CrabUnitRef = null
+	modulate = Color.GRAY
+	_on_button_mouse_exited()
 	if is_instance_valid(move):
+		modulate = Color.WHITE
 		ButtonRef.disabled = false
-		MoveName.text = move.MoveName
+		MoveName.text = move.MoveName.to_upper()
+		MoveDescription.text = move.MoveDescription
 		CrabMoveRef = move
 		CrabUnitRef = crab
 
@@ -41,3 +47,9 @@ func SetEnable():
 		return
 	ButtonRef.disabled = false
 	MoveName.modulate = Color.WHITE
+
+func _on_button_mouse_entered():
+	MoveDescription.visible = true
+
+func _on_button_mouse_exited():
+	MoveDescription.visible = false

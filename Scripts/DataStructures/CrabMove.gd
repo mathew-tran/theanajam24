@@ -9,7 +9,7 @@ enum TARGET {
 
 @export var TargetType : TARGET
 @export var MoveName : String
-@export var Cost : int
+@export var MoveDescription : String
 @export var Accuracy : int
 
 

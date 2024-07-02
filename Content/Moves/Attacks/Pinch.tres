@@ -9,5 +9,5 @@ DamageBonus = 5
 CritChance = 60
 TargetType = 1
 MoveName = "Pinch"
-Cost = 1
+MoveDescription = "Basic attack for all crabs!"
 Accuracy = 50

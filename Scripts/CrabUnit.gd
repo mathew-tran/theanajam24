@@ -11,6 +11,7 @@ var Health : HealthComponent
 func _ready():
 	Health = $HealthComponent
 	Health.Setup()
+	Name = Name.to_upper()
 
 func GetRandomMove():
 	return Moves[randi() % len(Moves)]
