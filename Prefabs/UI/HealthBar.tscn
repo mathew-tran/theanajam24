@@ -1,12 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://dnmp2ytlrmlbd"]
+[gd_scene load_steps=10 format=3 uid="uid://dnmp2ytlrmlbd"]
 
 [ext_resource type="Script" path="res://Scripts/UI/HealthBarUI.gd" id="1_fagoq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5tju7"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0, 0, 0, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7alqn"]
 bg_color = Color(1, 0.353301, 0.155795, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e5yfb"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_newo8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hlvvi"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rueoc"]
+bg_color = Color(0.900494, 0.466627, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k67vw"]
 bg_color = Color(0, 0, 0, 1)
@@ -22,9 +34,29 @@ offset_right = 666.0
 offset_bottom = 70.0
 theme_override_styles/background = SubResource("StyleBoxFlat_5tju7")
 theme_override_styles/fill = SubResource("StyleBoxFlat_7alqn")
-value = 10.0
+value = 60.0
 show_percentage = false
 script = ExtResource("1_fagoq")
+
+[node name="BGBar" type="ProgressBar" parent="."]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 655.0
+offset_bottom = 59.0
+theme_override_styles/background = SubResource("StyleBoxFlat_e5yfb")
+theme_override_styles/fill = SubResource("StyleBoxFlat_newo8")
+value = 100.0
+show_percentage = false
+
+[node name="DiffBar" type="ProgressBar" parent="."]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 655.0
+offset_bottom = 60.0
+theme_override_styles/background = SubResource("StyleBoxFlat_hlvvi")
+theme_override_styles/fill = SubResource("StyleBoxFlat_rueoc")
+value = 70.0
+show_percentage = false
 
 [node name="Health" type="Label" parent="."]
 custom_minimum_size = Vector2(300, 60)

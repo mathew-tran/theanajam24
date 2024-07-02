@@ -11,6 +11,7 @@ class_name HealthBarUI
 
 var LastCrab : CrabUnit
 
+var LastHealth = 0
 func _ready():
 	$EXPBar.visible = bShowEXPBar
 
@@ -25,6 +26,8 @@ func Setup(crab: CrabUnit):
 	crab.Health.OnDeath.connect(OnDeath)
 	crab.Health.OnHeal.connect(OnHeal)
 	crab.Health.OnTakeDamage.connect(OnTakeDamage)
+	LastHealth = crab.Health.Amount
+	$DiffBar.value = LastHealth
 
 	LastCrab = crab
 	print("Setup UI for " + crab.Name + "for " + str(get_path()))
@@ -41,12 +44,17 @@ func DisconnectPreviousCrab():
 func OnHeal(healthComponent):
 	Update(healthComponent)
 
-func OnTakeDamage(healthComponent):
+func OnTakeDamage(healthComponent : HealthComponent):
 	Update(healthComponent)
+	var tween = get_tree().create_tween()
+	tween.tween_property($DiffBar,  "value", healthComponent.Amount, .3).set_trans(Tween.TRANS_QUAD)
+
 
 
 func OnDeath(healthComponent):
 	Update(healthComponent)
+	var tween = get_tree().create_tween()
+	tween.tween_property($DiffBar,  "value", healthComponent.Amount, .5).set_trans(Tween.TRANS_QUAD)
 
 
 func Update(healthComponent : HealthComponent):
@@ -56,5 +64,6 @@ func Update(healthComponent : HealthComponent):
 		else:
 			HealthLabel.text = "DEAD"
 		max_value = healthComponent.MaxHealth
+		$DiffBar.max_value = healthComponent.MaxHealth
 		value = healthComponent.Amount
 		print(LastCrab.Name + " update")

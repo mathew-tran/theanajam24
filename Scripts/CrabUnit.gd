@@ -49,8 +49,11 @@ func AnimCrabHit():
 		await tween.finished
 
 func AnimCrabDead():
+	var rotationTarget = -90
+	if bIsEnemy:
+		rotationTarget = 90
 	var tween = get_tree().create_tween()
-	tween.tween_property(self, "rotation_degrees", -90, .1)
+	tween.tween_property(self, "rotation_degrees", rotationTarget, .1)
 	tween.tween_property(self, "position:y", position.y + 10, .1)
 	await tween.finished
 	tween = get_tree().create_tween()

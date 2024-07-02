@@ -29,7 +29,6 @@ position = Vector2(1589, 355)
 
 [node name="Crab" parent="BattleManager/EnemyCircle" instance=ExtResource("1_v801o")]
 position = Vector2(8, -1)
-scale = Vector2(-1, -1)
 Name = "Atticus"
 Moves = Array[Resource("res://Scripts/DataStructures/CrabMove.gd")]([ExtResource("6_4ip8s"), ExtResource("6_4ip8s"), ExtResource("6_4ip8s"), ExtResource("6_4ip8s")])
 

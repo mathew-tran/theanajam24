@@ -21,3 +21,14 @@ func DoMove(crabUnit, crabMove):
 		crabMove.PerformMove(target)
 	else:
 		EventManager.InjectBattleLog.emit(crabUnit.Name + "'s move has missed!")
+
+func IsRoundOver():
+	var activePlayer = GetActivePlayer()
+	var activeEnemy = GetActiveEnemy()
+
+	if activePlayer and activePlayer.Health.IsAlive() == false:
+		return true
+	if activeEnemy and activeEnemy.Health.IsAlive() == false:
+		return true
+
+	return false

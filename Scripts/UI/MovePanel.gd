@@ -32,4 +32,6 @@ func OnPlayerStartAttack():
 	visible = false
 
 func OnEnemyTelegraphAbility(_abil : CrabMove):
+	if Helper.IsRoundOver():
+		return
 	visible = true

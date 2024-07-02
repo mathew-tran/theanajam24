@@ -9,6 +9,7 @@ func _ready():
 func OnStartEnemyTurn():
 	var enemy = Helper.GetActiveEnemy()
 	enemy.bIsEnemy = true
+	enemy.flip_h = true
 	if enemy.Health.IsAlive() == false:
 		EventManager.EnemyTelegraphAbility.emit(null)
 		return
