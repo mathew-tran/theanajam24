@@ -13,6 +13,7 @@ func _ready():
 	ButtonRef.pressed.connect(OnButtonPressed)
 
 func OnButtonPressed():
+	ButtonRef.release_focus()
 	if is_instance_valid(CrabMoveRef) == false:
 		return
 
@@ -21,6 +22,7 @@ func OnButtonPressed():
 	EventManager.CompleteEnemyTurn.emit()
 	await get_tree().create_timer(.2).timeout
 	EventManager.StartEnemyTurn.emit()
+
 
 func Setup(move : CrabMove, crab : CrabUnit):
 	ButtonRef.disabled = true
