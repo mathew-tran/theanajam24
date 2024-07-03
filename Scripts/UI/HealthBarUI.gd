@@ -47,14 +47,14 @@ func OnHeal(healthComponent):
 func OnTakeDamage(healthComponent : HealthComponent):
 	Update(healthComponent)
 	var tween = get_tree().create_tween()
-	tween.tween_property($DiffBar,  "value", healthComponent.Amount, .3).set_trans(Tween.TRANS_QUAD)
+	tween.tween_property($DiffBar,  "value", healthComponent.Amount, .6).set_trans(Tween.TRANS_QUAD)
 
 
 
 func OnDeath(healthComponent):
 	Update(healthComponent)
 	var tween = get_tree().create_tween()
-	tween.tween_property($DiffBar,  "value", healthComponent.Amount, .5).set_trans(Tween.TRANS_QUAD)
+	tween.tween_property($DiffBar,  "value", healthComponent.Amount, .8).set_trans(Tween.TRANS_QUAD)
 
 
 func Update(healthComponent : HealthComponent):
