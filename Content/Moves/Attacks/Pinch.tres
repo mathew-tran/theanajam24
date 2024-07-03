@@ -1,13 +1,14 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://23lkrnyikk4i"]
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bd80hpemln2h6"]
 
-[ext_resource type="Script" path="res://Scripts/DataStructures/CrabMoveAttack.gd" id="1_d0ymv"]
+[ext_resource type="Script" path="res://Scripts/DataStructures/CrabMoveAttack.gd" id="1_on0nh"]
 
 [resource]
-script = ExtResource("1_d0ymv")
+script = ExtResource("1_on0nh")
 Damage = 2
-DamageBonus = 5
+DamageBonus = 3
 CritChance = 60
 TargetType = 1
 MoveName = "Pinch"
-MoveDescription = "Basic attack for all crabs!"
-Accuracy = 50
+MoveDescription = "Basic pinch attack"
+Accuracy = 65
+AnimType = 0

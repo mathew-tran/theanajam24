@@ -18,14 +18,11 @@ func OnButtonPressed():
 		return
 
 	EventManager.PlayerStartAttack.emit()
-	await CrabUnitRef.AnimMove()
 	Helper.DoMove(CrabUnitRef, CrabMoveRef)
-
-	await EventManager.BattleLogComplete
+	await EventManager.MoveComplete
+	await get_tree().process_frame
 
 	EventManager.CompleteEnemyTurn.emit()
-
-
 
 func Setup(move : CrabMove, crab : CrabUnit):
 	ButtonRef.disabled = true
@@ -42,6 +39,7 @@ func Setup(move : CrabMove, crab : CrabUnit):
 		MoveDescription.text = move.MoveDescription
 		CrabMoveRef = move
 		CrabUnitRef = crab
+
 
 func SetDisable():
 	ButtonRef.disabled = true

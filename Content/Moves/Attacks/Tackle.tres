@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://chmhh8lh4sxi4"]
+
+[ext_resource type="Script" path="res://Scripts/DataStructures/CrabMoveAttack.gd" id="1_8grbl"]
+
+[resource]
+script = ExtResource("1_8grbl")
+Damage = 2
+DamageBonus = 2
+CritChance = 30
+TargetType = 1
+MoveName = "Tackle"
+MoveDescription = "Tackle the enemy. Has a high chance of hitting."
+Accuracy = 95

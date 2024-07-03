@@ -7,10 +7,17 @@ enum TARGET {
 	ENEMY
 }
 
+enum ANIM {
+	MOVE,
+	STILL,
+	DANCE
+}
+
 @export var TargetType : TARGET
 @export var MoveName : String
 @export var MoveDescription : String
 @export var Accuracy : int
+@export var AnimType : ANIM
 
 
 func PerformMove(target : CrabUnit):

@@ -8,3 +8,5 @@ signal PlayerStartAttack
 signal StartEnemyTurn
 signal CompleteEnemyTurn
 signal EnemyTelegraphAbility(abil : CrabUnit)
+
+signal MoveComplete

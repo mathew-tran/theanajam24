@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://b381ajjtucj7u"]
+
+[ext_resource type="Script" path="res://Scripts/DataStructures/CrabMoveAttack.gd" id="1_2h1f3"]
+
+[resource]
+script = ExtResource("1_2h1f3")
+Damage = 0
+DamageBonus = 0
+CritChance = 60
+TargetType = 1
+MoveName = "Taunt"
+MoveDescription = "Dance at the enemy"
+Accuracy = 100
+AnimType = 2

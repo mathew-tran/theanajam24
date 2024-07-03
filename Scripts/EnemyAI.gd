@@ -24,9 +24,8 @@ func OnStartEnemyTurn():
 func OnCompleteEnemyTurn():
 	var enemy = Helper.GetActiveEnemy()
 	if enemy.Health.IsAlive():
-		await enemy.AnimMove()
 		Helper.DoMove(enemy, NextMoveToUse)
-		await EventManager.BattleLogComplete
+		await EventManager.MoveComplete
 		NextMoveToUse = null
 	else:
 		EventManager.EnemyTelegraphAbility.emit(null)

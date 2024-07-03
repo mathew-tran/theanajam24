@@ -20,6 +20,9 @@ func TakeDamage(amount):
 	if IsAlive() == false:
 		return
 
+	if amount == 0:
+		return
+
 	Amount -= amount
 	if Amount > 0:
 		OnTakeDamage.emit(self)

@@ -12,6 +12,10 @@ func _ready():
 	TargetXPosition = position.x
 	FlyAwayAnim()
 
+func FlyInAnim():
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "position:x", TargetXPosition, .2)
+
 func FlyAwayAnim():
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "position:x", 20000, .2)
@@ -22,8 +26,7 @@ func OnInjectBattleLog(message: String):
 		Messages.append(message)
 		return
 	$Label.text = message
-	var tween = get_tree().create_tween()
-	tween.tween_property(self, "position:x", TargetXPosition, .2)
+	FlyInAnim()
 	bIsActive = true
 
 func _input(event):
@@ -36,8 +39,7 @@ func _input(event):
 func OnFlyAwayComplete():
 	if len(Messages) > 0:
 		$Label.text = Messages.pop_back()
-		var tween = get_tree().create_tween()
-		tween.tween_property(self, "position:x", TargetXPosition, .2)
+		FlyInAnim()
 		return
 	EventManager.BattleLogComplete.emit()
 	bIsActive = false

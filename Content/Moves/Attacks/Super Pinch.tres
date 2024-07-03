@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cf1t58fj2swwd"]
+
+[ext_resource type="Script" path="res://Scripts/DataStructures/CrabMoveAttack.gd" id="1_sa2fw"]
+
+[resource]
+script = ExtResource("1_sa2fw")
+Damage = 5
+DamageBonus = 8
+CritChance = 60
+TargetType = 1
+MoveName = "Super Pinch"
+MoveDescription = "Deals higher damage, but hard chance to hit"
+Accuracy = 45
