@@ -18,13 +18,16 @@ func DoMove(crabUnit : CrabUnit, crabMove : CrabMove):
 
 	if crabMove.HasPassedAccuracyCheck():
 		var target = crabMove.DetermineTarget(crabUnit)
-		crabMove.PerformMove(target)
+
 		#Expect the move to give dialogue.
 		if crabMove.AnimType == CrabMove.ANIM.MOVE:
 			await crabUnit.AnimMove()
 
 		if crabMove.AnimType == CrabMove.ANIM.DANCE:
 			await crabUnit.AnimDance()
+
+		crabMove.PerformMove(target)
+
 	else:
 		EventManager.InjectBattleLog.emit(crabUnit.Name + "'s move has missed!")
 

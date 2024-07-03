@@ -3,7 +3,7 @@ extends Panel
 
 var TargetXPosition = 0
 var bIsActive = false
-
+var bIsFlyingAway = false
 var Messages = []
 
 # Called when the node enters the scene tree for the first time.
@@ -30,11 +30,14 @@ func OnInjectBattleLog(message: String):
 	bIsActive = true
 
 func _input(event):
+
 	if event.is_action_released("mouse_click"):
 		if bIsActive:
-			var tween = FlyAwayAnim()
+			var tween = FlyAwayAnim() as Tween
 			tween.tween_callback(OnFlyAwayComplete)
-
+			set_process_input(false)
+			await tween.finished
+			set_process_input(true)
 
 func OnFlyAwayComplete():
 	if len(Messages) > 0:
