@@ -19,7 +19,7 @@ func GetRandomMove():
 	return Moves[randi() % len(Moves)]
 
 func GetRandomListOfMoves():
-	var moves = Moves
+	var moves = Moves.duplicate()
 	moves.shuffle()
 	var randomList = []
 	for x in range(0, 4):

@@ -19,7 +19,7 @@ func OnPopulatePlayerData(crab : CrabUnit):
 	var moves = crab.GetRandomListOfMoves()
 	for x in range(0, len(Moves)):
 		if len(crab.Moves) > x:
-			Moves[x].Setup(crab.Moves[x], crab)
+			Moves[x].Setup(moves[x], crab)
 		else:
 			Moves[x].Setup(null, null)
 	MovePanelPopulated.emit()
